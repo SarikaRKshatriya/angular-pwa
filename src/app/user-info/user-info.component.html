@@ -1,0 +1,23 @@
+<button 
+(click)="signout()">Sign Out</button>
+<div>
+    <h2>User's Information and task tracking</h2> 
+ <div>
+	<strong>Name: {{user.firstname}}</strong> <br>
+	<strong>Email: {{user.email}}</strong><br>
+</div> 
+<button 
+(click)="addToDo()">Add To Do</button>
+<div *ngIf="showTodo">
+<input type="text" [(ngModel)]="newtodo" />
+<button 
+(click)="addToDoList(newtodo)">Add TO List</button><br>
+<strong>Your task's list:</strong>
+<ul *ngFor = "let todo of todolist">
+<li style="list-style-type: circle;">{{todo}}</li>
+</ul>
+
+</div>
+</div>
+  
+
